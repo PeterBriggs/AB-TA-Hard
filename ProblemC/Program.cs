@@ -1,5 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 
+/*
+ * Battery Explosion Problem
+ * Find minimum tests needed to determine maximum safe current with two batteries
+ */
 class Program
 {
     static void Main()
@@ -25,11 +30,20 @@ class Program
         }
     }
 
+    /*
+     * Calculates the minimum number of tests needed to find the maximum safe current.
+     * Uses the solution to the classic egg drop problem.
+     *
+     * @param kaboomThreshold - The current level (mA) at which the battery is known to explode
+     * @return The minimum number of tests required in the worst case
+     */
     static int CalculateMinTests(int kaboomThreshold)
     {
-        // The formula for minimum tests with 2 batteries is derived from:
-        // k(k+1)/2 ≥ kaboomThreshold
-        // Where k is the number of tests
+        /*
+        * The formula for minimum tests with 2 batteries is derived from:
+        * k(k+1)/2 ≥ kaboomThreshold
+        * Where k is the number of tests.
+        */
 
         double quadraticValue = 1 + 8 * kaboomThreshold;
         return (int)Math.Ceiling((-1 + Math.Sqrt(quadraticValue)) / 2);
