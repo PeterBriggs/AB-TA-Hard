@@ -1,3 +1,6 @@
+![.NET](https://github.com/PeterBriggs/AB-TA-Hard/actions/workflows/dotnet.yml/badge.svg)
+![Coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/PeterBriggs/your-gist-id/raw/badge-coverage.json)
+
 # 🔋 Problem C – Maximum Safe Current Finder
 
 We’ve all had days where things explode under pressure. Sadly, our laptop batteries have started to take that a bit too literally. The goal here? Find the _maximum_ current (in milliamps) we can push through a battery before it _might_ go kaboom 💥—but do it with only **two** test batteries and as few tests as possible.
