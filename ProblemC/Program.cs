@@ -5,9 +5,9 @@ using System.Collections.Generic;
  * Battery Explosion Problem
  * Find minimum tests needed to determine maximum safe current with two batteries
  */
-class Program
+public class Program
 {
-    static void Main()
+    public static void Main()
     {
 
         List<int> results = new List<int>();
@@ -37,7 +37,7 @@ class Program
      * @param kaboomThreshold - The current level (mA) at which the battery is known to explode
      * @return The minimum number of tests required in the worst case
      */
-    static int CalculateMinTests(int kaboomThreshold)
+    public static int CalculateMinTests(int kaboomThreshold)
     {
         /*
         * The formula for minimum tests with 2 batteries is derived from:
