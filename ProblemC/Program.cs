@@ -43,9 +43,13 @@ public class Program
         * The formula for minimum tests with 2 batteries is derived from:
         * k(k+1)/2 ≥ kaboomThreshold
         * Where k is the number of tests.
+        * k(k+1)/2 ≥ kaboomThreshold - 1
+        * Is used as we need the maximum before kaboom.
         */
 
-        double quadraticValue = 1 + 8 * kaboomThreshold;
+        if (kaboomThreshold == 0) return 0;
+
+        double quadraticValue = 1 + 8 * (kaboomThreshold - 1);
         return (int)Math.Ceiling((-1 + Math.Sqrt(quadraticValue)) / 2);
     }
 }

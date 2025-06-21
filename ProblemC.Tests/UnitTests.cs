@@ -24,17 +24,16 @@ namespace ProblemC.Tests
         }
 
         [TestMethod]
-        public void CalculateMinTests_WithLargeNumber_PerformsEfficiently()
+        public void CalculateMinTests_WithMaxNumber_PerformsEfficiently()
         {
             // Arrange
-            int kaboomThreshold = 1000000000;
+            int kaboomThreshold = 4711;
 
             // Act
             int result = Program.CalculateMinTests(kaboomThreshold);
 
             // Assert
-            Assert.IsTrue(result > 0);
-            Assert.IsTrue(result < 50000);
+            Assert.AreEqual(97, result);
         }
 
         [TestMethod]
@@ -52,7 +51,6 @@ namespace ProblemC.Tests
         {
             // Arrange
             string input = "1\n2\n10\n23\n0\n";
-            string expectedOutput = "0\n1\n4\n7\n";
 
             StringReader inputReader = new StringReader(input);
             StringWriter outputWriter = new StringWriter();
@@ -64,7 +62,11 @@ namespace ProblemC.Tests
             Program.Main();
 
             // Assert
-            Assert.AreEqual(expectedOutput, outputWriter.ToString());
+            // Normalize both strings by replacing Windows line endings with Unix line endings
+            string expected = "0\n1\n4\n7\n";
+            string actual = outputWriter.ToString().Replace("\r\n", "\n");
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }
