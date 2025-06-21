@@ -4,6 +4,9 @@ class Program
 {
     static void Main()
     {
+
+        List<int> results = new List<int>();
+
         while (true)
         {
             string? inputLine = Console.ReadLine();
@@ -13,7 +16,12 @@ class Program
             if (kaboomCurrent == 0) break;
 
             int worstCaseTests = CalculateMinTests(kaboomCurrent);
-            Console.WriteLine(worstCaseTests);
+            results.Add(worstCaseTests);
+        }
+
+        foreach (int result in results)
+        {
+            Console.WriteLine(result);
         }
     }
 
